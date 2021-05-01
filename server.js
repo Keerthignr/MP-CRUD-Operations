@@ -61,27 +61,29 @@ app.post('/update',(req,res)=>{
                 break
             }
         }
+        
         db.collection('studentTable').findOneAndUpdate({RollNo:req.body.RollNo},{
-            $set:{Name:parseInt(s)+parseInt(req.body.Name)}},
+            $set:{Name:req.body.Name}},
             (err,result)=>{
                 if(err) return res.send(err)
-                console.log(req.body.RollNo+ ' stock updated')
+                console.log(req.body.RollNo+ ' Student updated')
                 res.redirect('/')
             })
     })
 })
 
+//Integer Updation
 // app.post('/update',(req,res)=>{
 //     db.collection('studentTable').find().toArray((err,result)=>{
 //         if(err) return console.log(err)
 //         for(var i=0;i<result.length;i++){
 //             if(result[i].RollNo==req.body.RollNo){
-//                 s=result[i].Name
+//                 s=result[i].PhoneNo
 //                 break
 //             }
 //         }
 //         db.collection('studentTable').findOneAndUpdate({RollNo:req.body.RollNo},{
-//             $set:{Name:parseInt(s)+parseInt(req.body.Name)}},
+//             $set:{PhoneNo:parseInt(req.body.PhoneNo)}},
 //             (err,result)=>{
 //                 if(err) return res.send(err)
 //                 console.log(req.body.RollNo+ ' stock updated')
