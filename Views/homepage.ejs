@@ -1,0 +1,55 @@
+<html lang="en">
+    <head>
+        <title>Student Data Management</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body style="background-color: rgb(238, 238, 238);">
+          <div class="left" style="float: left; width: 20%; height:100%; background-color: rgb(31, 31, 31);">
+            <div class="collegename" style="color: #eee;
+             margin: 10px 15px 10px 25px; font-size: 25px;
+             "Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji">
+                Institute Name
+            </div>
+            <hr style="background-color: rgb(112, 112, 112); width: 100%;"><br>
+            <a href="/create" class="c2">Add New Student</a><br><br>
+            <a href="/updatestock" class="c2">Update Student</a><br><br>
+            <a href="/deleteproduct" class="c2">Delete Student</a>
+          </div>
+
+        <center>
+            <div class="home">
+                Home
+            </div>
+            <div class="SDM" style="text-align: left; font-size: 25px;
+            "Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji">
+                &ensp;Student Data Management</div>
+            <table style="width: 75%;">
+                
+                <tr>
+                    <th>RollNo</th>
+                    <th>Name</th>
+                    <th>Branch</th>
+                    <th>Section</th>
+                    <th>PhoneNo</th>
+                </tr>
+                <% for(var i=0;i<data.length;i++){%>
+                    <tr>
+                        <td><%= data[i].RollNo %></td>
+                        <td><%= data[i].Name %></td>
+                        <td><%= data[i].Branch %></td>
+                        <td><%= data[i].Section %></td>
+                        <td><%= data[i].PhoneNo %></td>
+                    </tr>
+                <%}
+                %>
+            </table>
+        </center>
+    </body>
+</html>
